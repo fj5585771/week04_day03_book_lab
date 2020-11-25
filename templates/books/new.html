@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- form  -->
+
+    <form action= "/books" method="post">
+    <!-- form: input for title -->
+        <div>
+            <label  for="title">Title:</label>
+            <input  type="text" 
+                    name="title" 
+                    id="title" 
+                    placeholder="title" 
+                    required 
+                    autofocus>
+        </div>
+
+    <!-- form: input for genre -->
+        <div>
+            <label  for="genre">Genre:</label>
+            <select name="genre" id="genre">
+                <!-- TODO -->
+                {% for genre in all_genres %}
+                    <option value="{{user.id}}">{{user.first_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    <!-- form: input for publisher -->
+        <div>
+            <label  for="publisher">Publisher:</label>
+            <input  type="text" 
+                    name="publisher" 
+                    id="publisher"
+                    placeholder="genre" 
+                    required>
+        </div>
+
+    <!-- form: select a author form the list -->
+        <div>
+            <label  for="author">Author:</label>
+            <input  type="text" 
+                    name="author" 
+                    id="author"
+                    placeholder="author" 
+                    required>
+        </div>
+    <!-- form: submit button to submit-->
+        <button type="submit">Submit</button>
+
+    </form>
+
+{% endblock %}

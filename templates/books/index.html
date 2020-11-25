@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="book-wrapper">
+    {% for book in all_books %}
+        <div>
+
+            <span class="title"> {{ book.title }}</span>
+            <span class="author"> by {{ book.author.first_name }} {{ book.author.last_name }}</span>
+
+            <div class="delete">
+
+                <form action="/books/{{ book.id }}>/delete" method="POST">
+                    <button type="submit"> Remove</button>
+                </form>
+        
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
